@@ -5,7 +5,7 @@
     <application>
         <provider
             android:authorities="${applicationId}.DebugDBEncryptInitProvider"
-            android:name=".DebugDBEncryptInitProvider"
+            android:name="com.ashal.debug.encrypt.DebugDBEncryptInitProvider"
             android:exported="false"
             android:enabled="true"/>
     </application>
