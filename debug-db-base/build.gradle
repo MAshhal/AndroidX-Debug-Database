@@ -45,7 +45,7 @@ dependencies {
 
 mavenPublishing {
     publishing {
-        coordinates("com.ashal", "debug-db-base", "1.0.1")
+        coordinates("com.ashal", "debug-db-base", "1.0.3")
 
         repositories {
             maven {
