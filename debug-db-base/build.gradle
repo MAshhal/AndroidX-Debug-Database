@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.library'
-
+    id "com.vanniktech.maven.publish" version "0.25.3"
 }
 
 def siteUrl = 'https://github.com/MAshhal/AndroidX-Debug-Database'
@@ -43,50 +43,42 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-//mavenPublishing {
-//    publishing {
-//
-//    }
-//    signAllPublications()
-//}
+mavenPublishing {
+    publishing {
+        coordinates("com.ashal", "debug-db-base", "1.0.1")
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//
-//                groupId = 'com.ashal'
-//                artifactId = 'debug-db'
-//                version = '1.0.0'
-//
-////                name  = 'Android Debug Database'
-////                description = 'Android Debug Database is a powerful library for debugging databases in Android applications'
-//
-////                license {
-////                    name = 'The Apache License, Version 2.0'
-////                    url  = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-////                }
-//
-////                developers {
-////                    developer {
-////                        id = 'amitshekhariitbhu'
-////                        name = 'Amit Shekhar'
-////                        email = 'amit.shekhar.iitbhu@gmail.com'
-////                    }
-////                }
-//
-////                scm {
-////                    connection = gitUrl
-////                    developerConnection = gitUrl
-////                    url = siteUrl
-////                }
-//            }
-//        }
-//
-//        repositories {
-//            maven { url siteUrl }
-//        }
-//
-//    }
-//}
+        repositories {
+            maven {
+                name = "MyMavenRepo"
+                url = myMavenRepoWriteURL
+            }
+        }
+
+        pom {
+            name = "Android Debug Database"
+            inceptionYear = "2023"
+            url = "https://github.com/MAshhal/AndroidX-Debug-Database"
+            licenses {
+                license {
+                    name = "The Apache License, Version 2.0"
+                    url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                }
+            }
+
+            developers {
+                developer {
+                    id = 'amitshekhariitbhu'
+                    name = 'Amit Shekhar'
+                    email = 'amit.shekhar.iitbhu@gmail.com'
+                }
+            }
+
+            scm {
+                url = "https://github.com/MAshhal/AndroidX-Debug-Database"
+                connection = "https://github.com/MAshhal/AndroidX-Debug-Database.git"
+                developerConnection = "https://github.com/MAshhal/AndroidX-Debug-Database.git"
+            }
+        }
+    }
+}

@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    api project(':debug-db-base')
+    implementation 'com.ashal:debug-db-base:1.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -35,12 +35,12 @@ dependencies {
 
 mavenPublishing {
     publishing {
-        coordinates("com.ashal", "debug-db", "1.0.0")
+        coordinates("com.ashal", "debug-db", "1.0.1")
 
         repositories {
             maven {
                 name = "MyMavenRepo"
-                url = "https://mymavenrepo.com/repo/RyRO4CwgWWZoQAypnUEV/"
+                url = myMavenRepoWriteURL
             }
         }
 
@@ -69,8 +69,6 @@ mavenPublishing {
                 connection = "https://github.com/MAshhal/AndroidX-Debug-Database.git"
                 developerConnection = "https://github.com/MAshhal/AndroidX-Debug-Database.git"
             }
-
         }
-
     }
 }
